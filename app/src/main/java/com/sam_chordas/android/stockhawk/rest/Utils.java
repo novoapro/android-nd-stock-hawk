@@ -30,7 +30,10 @@ public class Utils {
         if (count == 1){
           jsonObject = jsonObject.getJSONObject("results")
               .getJSONObject("quote");
-          batchOperations.add(buildBatchOperation(jsonObject));
+
+          ContentProviderOperation contentProviderOperation = buildBatchOperation(jsonObject);
+          if(contentProviderOperation != null)
+            batchOperations.add(contentProviderOperation);
         } else{
           resultsArray = jsonObject.getJSONObject("results").getJSONArray("quote");
 
@@ -86,10 +89,11 @@ public class Utils {
       }else{
         builder.withValue(QuoteColumns.ISUP, 1);
       }
+      return builder.build();
 
-    } catch (JSONException e){
-      e.printStackTrace();
+    } catch (Exception e){
+      Log.e(LOG_TAG, "buildBatchOperation: ", e);
+      return null;
     }
-    return builder.build();
   }
 }
