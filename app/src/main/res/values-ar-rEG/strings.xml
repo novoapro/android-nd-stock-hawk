@@ -8,5 +8,11 @@
     <string name="content_test">بحث عن الأوراق المالية رمز</string>
     <string name="network_toast">اه اوه! هذا التطبيق يتطلب اتصال بالإنترنت</string>
     <string name="stock_saved">يتم حفظ هذه الأسهم بالفعل!</string>
+    <string name="previous_close">إغلاق السابق</string>
+    <string name="percent_change">تغير</string>
+    <string name="big_price">سعر</string>
+    <string name="change_y_high">تغيير السنة السامي</string>
+    <string name="change_y_low">تغيير أدنى أعلى</string>
+    <string name="change">تغيير</string>
 
 </resources>

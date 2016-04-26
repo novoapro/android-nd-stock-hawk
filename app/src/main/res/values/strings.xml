@@ -8,17 +8,18 @@
   <string name="symbol_search">Symbol Search</string>
   <string name="content_test">Search for a Stock Symbol</string>
   <string name="input_hint" translatable="false">FB</string>
-  <string name="input_prefill"></string>
+  <string name="input_prefill" translatable="false"></string>
   <string name="network_toast">Uh-oh! This app requires an internet connection</string>
   <string name="stock_saved">This stock is already saved!</string>
-    <string name="appwidget_text">EXAMPLE</string>
-    <string name="add_widget">Add widget</string>
+    <string name="appwidget_text" translatable="false">EXAMPLE</string>
+    <string name="add_widget" translatable="false">Add widget</string>
   <string name="percent_change">% Changed:</string>
-  <string name="big_price">Big Price:</string>
+  <string name="big_price">Bid Price:</string>
   <string name="change">Change:</string>
   <string name="change_y_low">Change Year Low:</string>
   <string name="change_y_high">Change Year High:</string>
   <string name="previous_close">Previous Close:</string>
+  <string name="no_stocks">There are not stocks availables</string>
 
 
 </resources>
