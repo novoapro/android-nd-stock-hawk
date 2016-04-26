@@ -89,6 +89,11 @@ public class Utils {
       }else{
         builder.withValue(QuoteColumns.ISUP, 1);
       }
+      builder.withValue(QuoteColumns.CHANGE_FOR_YEAR_HIGH, jsonObject.getString("ChangeFromYearHigh"));
+      builder.withValue(QuoteColumns.CHANGE_FOR_YEAR_LOW, jsonObject.getString("ChangeFromYearLow"));
+      builder.withValue(QuoteColumns.YEAR_RANGE, jsonObject.getString("YearRange"));
+      builder.withValue(QuoteColumns.PREVIOUS_CLOSE, jsonObject.getString("PreviousClose"));
+      builder.withValue(QuoteColumns.CHANGE_FOR_YEAR_LOW, jsonObject.getString("ChangeFromYearLow"));
       return builder.build();
 
     } catch (Exception e){

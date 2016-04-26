@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="quote"
+            type="com.sam_chordas.android.stockhawk.data.QuoteModel" />
+    </data>
+
+    <android.support.v7.widget.GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        app:columnCount="2"
+        tools:context="com.sam_chordas.android.stockhawk.ui.StockDetailsActivity"
+        android:id="@+id/gl_container"
+        android:visibility="invisible">
+
+        <TextView
+            android:text="@{quote.symbol}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dimen_default"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            app:layout_columnSpan="2"
+            app:layout_columnWeight="1"
+            tools:text="YAHOO" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/previous_close"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            app:layout_columnWeight="1"
+            android:layout_marginBottom="@dimen/dimen_half" />
+
+        <TextView
+            android:text="@{quote.previousClose}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            app:layout_columnWeight="1"
+            android:layout_marginBottom="@dimen/dimen_half"
+            android:gravity="right" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/big_price"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            app:layout_columnWeight="1"
+            android:layout_marginBottom="@dimen/dimen_half" />
+
+        <TextView
+            android:text="@{quote.bidPrice}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            app:layout_columnWeight="1"
+            android:layout_marginBottom="@dimen/dimen_half"
+            android:gravity="right" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/percent_change"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            app:layout_columnWeight="1"
+            android:layout_marginBottom="@dimen/dimen_half" />
+
+        <TextView
+            android:text="@{quote.percentChange}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            app:layout_columnWeight="1"
+            android:layout_marginBottom="@dimen/dimen_half"
+            android:gravity="right" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/change"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            app:layout_columnWeight="1"
+            android:layout_marginBottom="@dimen/dimen_half" />
+
+        <TextView
+            android:text="@{quote.change}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            app:layout_columnWeight="1"
+            android:layout_marginBottom="@dimen/dimen_half"
+            android:gravity="right" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/change_y_low"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            app:layout_columnWeight="1"
+            android:layout_marginBottom="@dimen/dimen_half" />
+
+        <TextView
+            android:text="@{quote.changeForYearLow}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            app:layout_columnWeight="1"
+            android:layout_marginBottom="@dimen/dimen_half"
+            android:gravity="right" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/change_y_high"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            app:layout_columnWeight="1"
+            android:layout_marginBottom="@dimen/dimen_half" />
+
+        <TextView
+            android:text="@{quote.changeForYearHigh}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            app:layout_columnWeight="1"
+            android:layout_marginBottom="@dimen/dimen_half"
+            android:gravity="right" />
+
+    </android.support.v7.widget.GridLayout>
+</layout>

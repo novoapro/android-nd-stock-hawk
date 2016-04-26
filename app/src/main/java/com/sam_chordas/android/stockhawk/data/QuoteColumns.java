@@ -25,4 +25,12 @@ public class QuoteColumns {
   public static final String ISUP = "is_up";
   @DataType(DataType.Type.INTEGER) @NotNull
   public static final String ISCURRENT = "is_current";
+  @DataType(DataType.Type.TEXT) @NotNull
+  public static final String PREVIOUS_CLOSE = "previous_close";
+  @DataType(DataType.Type.TEXT)
+  public static final String YEAR_RANGE = "year_range";
+  @DataType(DataType.Type.TEXT)
+  public static final String CHANGE_FOR_YEAR_LOW = "change_for_year_low";
+  @DataType(DataType.Type.TEXT)
+  public static final String CHANGE_FOR_YEAR_HIGH = "change_for_year_high";
 }

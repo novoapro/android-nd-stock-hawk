@@ -16,6 +16,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
 import android.text.InputType;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -46,6 +47,9 @@ public class MyStocksActivity extends AppCompatActivity implements LoaderManager
     /**
      * Used to store the last screen title. For use in {@link #restoreActionBar()}.
      */
+
+    private static final String TAG = "MyStocksActivity";
+
     private CharSequence mTitle;
     private Intent mServiceIntent;
     private ItemTouchHelper mItemTouchHelper;
@@ -77,8 +81,12 @@ public class MyStocksActivity extends AppCompatActivity implements LoaderManager
                 new RecyclerViewItemClickListener.OnItemClickListener() {
                     @Override
                     public void onItemClick(View v, int position) {
-                        //TODO:
-                        // do something on item click
+                        if(mCursor == null || !mCursor.moveToPosition(position))
+                            return;
+
+                        Intent intent = new Intent(MyStocksActivity.this, StockDetailsActivity.class);
+                        intent.putExtra(StockDetailsActivity.STOCK_SYMBOL_EXTRA, mCursor.getString(1));
+                        startActivity(intent);
                     }
                 }));
         recyclerView.setAdapter(mCursorAdapter);
@@ -130,6 +138,7 @@ public class MyStocksActivity extends AppCompatActivity implements LoaderManager
         ItemTouchHelper.Callback callback = new SimpleItemTouchHelperCallback(mCursorAdapter);
         mItemTouchHelper = new ItemTouchHelper(callback);
         mItemTouchHelper.attachToRecyclerView(recyclerView);
+
 
         mTitle = getTitle();
         if (isConnected) {
